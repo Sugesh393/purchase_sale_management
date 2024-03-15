@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}" >
+    <title>Home</title> 
+</head>
+<body>
+    {% if message %}
+    <script>
+        alert('{{ message }}')
+    </script>
+    {% endif %}
+    <h1>Welcome to Namma Kadai</h1><br>
+    <h2>List of Available Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Item Name</th>
+                <th>Rate of Item/each</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %} <!--Jinja Syntax-->
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.rate }}</td>
+                <td>{{ item.quantity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table><br><br>
+    <h2>Add New Item:</h2>
+    <form action="/add_item" method="post">
+        <label for="name">Item Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="rate">Rate of Item/each:</label>
+        <input type="number" id="rate" name="rate" min="1" required>
+        <br><br>
+        <button type="submit">Add Item</button>
+    </form><br><br>
+    <a href="/purchase">Go to Purchase Page</a><br><br> <!--Linking Pages-->
+    <a href="/sale">Go to Sale Page</a>
+</body>
+</html>
