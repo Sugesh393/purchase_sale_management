@@ -1,4 +1,4 @@
-
+![Screenshot (90)](https://github.com/Sugesh393/purchase_sale_management/assets/73237300/280745b7-e634-4388-acb8-ed98ecaff6da)
 
 It is the homepage for Namma Kadai. In this, List of Items in this shop are displayed and new items can also be added if needed. From this page, we can navigate to Purchase page and Sale page. It also has cash balance which will get affected based on Purchase and Sale.
 
